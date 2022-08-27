@@ -75,24 +75,26 @@ const radio = document.querySelectorAll('input[name="janken"]');
                     console.log("Error. No user input selected")
                     document.getElementById("uChoice").innerHTML = `Error. No user input. Please choose: rock, paper or scissors`;
                     }
-        let comImg = document.getElementById("cImage")
-        comImg.src = "Computer/" + computerChoice +".png"
+        let comImg = document.getElementById("cImage");
+        comImg.src = "Computer/" + computerChoice +".png";
 
-        let uImg = document.getElementById("uImage")
-        uImg.src = "User/" + userInput + ".png"
+        let uImg = document.getElementById("uImage");
+        uImg.src = "User/" + userInput + ".png";
         document.getElementById("greet").src = "";
         document.getElementById("score").innerHTML = score;
         document.getElementById("cScore").innerHTML = cScore;
         clr.addEventListener("click", () => {
             mNum = 0;
             document.getElementById("mHist").innerHTML = "";
-            
+            uImg.src = "";
+            comImg.src = "";
         });
         rstrt.addEventListener("click", () => {
             cScore = 0;
             score = 0;
             document.getElementById("score").innerHTML = score;
             document.getElementById("cScore").innerHTML = cScore;
-            
+            uImg.src = "";
+            comImg.src = "";
         });
     });
