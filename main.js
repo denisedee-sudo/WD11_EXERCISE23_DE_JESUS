@@ -4,6 +4,8 @@ let cScore = 0;
 let mNum = 0;
 let match = document.getElementById("mHist");
 let clr = document.getElementById("clr");
+let rstrt = document.getElementById("rstrt");
+
 const radio = document.querySelectorAll('input[name="janken"]');
     go.addEventListener("click", () => {
         let userInput;
@@ -84,6 +86,13 @@ const radio = document.querySelectorAll('input[name="janken"]');
         clr.addEventListener("click", () => {
             mNum = 0;
             document.getElementById("mHist").innerHTML = "";
+            
+        });
+        rstrt.addEventListener("click", () => {
+            cScore = 0;
+            score = 0;
+            document.getElementById("score").innerHTML = score;
+            document.getElementById("cScore").innerHTML = cScore;
             
         });
     });
