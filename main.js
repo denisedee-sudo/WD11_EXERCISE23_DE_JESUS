@@ -1,5 +1,6 @@
 const go = document.querySelector('#go');        
 let score = 0;
+let cScore = 0;
 const radio = document.querySelectorAll('input[name="janken"]');
     go.addEventListener("click", () => {
         let userInput;
@@ -28,6 +29,7 @@ const radio = document.querySelectorAll('input[name="janken"]');
                         if(computerChoice === "paper"){
                             console.log("The computer wins!")
                             document.getElementById("winner").innerHTML = "the Computer";
+                            cScore++;
                         } else{
                             console.log("You win!")
                             document.getElementById("winner").innerHTML = "You";
@@ -37,6 +39,7 @@ const radio = document.querySelectorAll('input[name="janken"]');
                         if(computerChoice === "scissors"){
                             console.log("The computer wins!")
                             document.getElementById("winner").innerHTML = "the Computer";
+                            cScore++;
                         } else{
                             console.log("You win!")
                             document.getElementById("winner").innerHTML = "You";
@@ -46,6 +49,7 @@ const radio = document.querySelectorAll('input[name="janken"]');
                         if(computerChoice === "rock"){
                             console.log("The computer wins!")
                             document.getElementById("winner").innerHTML = "the Computer";
+                            cScore++;
                         } else{
                             console.log("You win!")
                             document.getElementById("winner").innerHTML = "You";
@@ -63,4 +67,5 @@ const radio = document.querySelectorAll('input[name="janken"]');
         uImg.src = "User/" + userInput + ".png"
         document.getElementById("greet").src = "";
         document.getElementById("score").innerHTML = score;
+        document.getElementById("cScore").innerHTML = cScore;
     });
