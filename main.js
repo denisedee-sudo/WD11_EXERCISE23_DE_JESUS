@@ -24,17 +24,19 @@ const radio = document.querySelectorAll('input[name="janken"]');
                 }
                 let computerChoice = getComputerChoice()
                 document.getElementById("computerPlay").innerHTML = computerChoice;
-                if(userInput == "rock" || userInput === "paper" || userInput === "scissors"){
+                if(userInput === "rock" || userInput === "paper" || userInput === "scissors"){
                     console.log("You chose "+ userInput)
                     document.getElementById("uChoice").innerHTML = "You chose "+ userInput;
-                    if(userInput == computerChoice){
+                    if(userInput === computerChoice){
                         console.log("It's a tie!")
                         mNum++;
                         document.getElementById("winner").innerHTML = "It's a tie!";
                         match.insertAdjacentHTML("afterbegin", "<h5> Match " + mNum + ": It's a tie!</h5>");
-                    } else if (userInput == "rock"){
+                    } else if (userInput === "rock"){
                         if(computerChoice === "paper"){
                             match.insertAdjacentHTML("afterbegin", "<h5> Match " + mNum +": The computer won!</h5>");
+                            cScore++;
+                            mNum++;
                         } else{
                             console.log("You win!")
                             document.getElementById("winner").innerHTML = "You";
@@ -42,7 +44,7 @@ const radio = document.querySelectorAll('input[name="janken"]');
                             mNum++;
                             match.insertAdjacentHTML("afterbegin", "<h5> Match " + mNum +": You won!</h5>");
                         }
-                    } else if (userInput == "paper"){
+                    } else if (userInput === "paper"){
                         if(computerChoice === "scissors"){
                             console.log("The computer wins!")
                             document.getElementById("winner").innerHTML = "the Computer";
