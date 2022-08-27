@@ -1,6 +1,9 @@
 const go = document.querySelector('#go');        
 let score = 0;
 let cScore = 0;
+let mNum = 0;
+let match = document.getElementById("mHist");
+let clr = document.getElementById("clr");
 const radio = document.querySelectorAll('input[name="janken"]');
     go.addEventListener("click", () => {
         let userInput;
@@ -24,36 +27,46 @@ const radio = document.querySelectorAll('input[name="janken"]');
                     document.getElementById("uChoice").innerHTML = "You chose "+ userInput;
                     if(userInput == computerChoice){
                         console.log("It's a tie!")
+                        mNum++;
                         document.getElementById("winner").innerHTML = "It's a tie!";
+                        match.insertAdjacentHTML("afterbegin", "<h5> Match " + mNum + ": It's a tie!</h5>");
                     } else if (userInput == "rock"){
                         if(computerChoice === "paper"){
-                            console.log("The computer wins!")
-                            document.getElementById("winner").innerHTML = "the Computer";
-                            cScore++;
+                            match.insertAdjacentHTML("afterbegin", "<h5> Match " + mNum +": The computer won!</h5>");
                         } else{
                             console.log("You win!")
                             document.getElementById("winner").innerHTML = "You";
                             score++;
+                            mNum++;
+                            match.insertAdjacentHTML("afterbegin", "<h5> Match " + mNum +": You won!</h5>");
                         }
                     } else if (userInput == "paper"){
                         if(computerChoice === "scissors"){
                             console.log("The computer wins!")
                             document.getElementById("winner").innerHTML = "the Computer";
                             cScore++;
+                            mNum++;
+                            match.insertAdjacentHTML("afterbegin", "<h5> Match " + mNum +": The computer won!</h5>");
                         } else{
                             console.log("You win!")
                             document.getElementById("winner").innerHTML = "You";
                             score++;
+                            mNum++;
+                            match.insertAdjacentHTML("afterbegin", "<h5> Match " + mNum +": You won!</h5>");
                         }
                     } else{
                         if(computerChoice === "rock"){
                             console.log("The computer wins!")
                             document.getElementById("winner").innerHTML = "the Computer";
                             cScore++;
+                            mNum++;
+                            match.insertAdjacentHTML("afterbegin", "<h5> Match " + mNum +": The computer won!</h5>");
                         } else{
                             console.log("You win!")
                             document.getElementById("winner").innerHTML = "You";
                             score++;
+                            mNum++;
+                            match.insertAdjacentHTML("afterbegin", "<h5> Match " + mNum +": You won!</h5>");
                         }
                     }
                 }else{
@@ -68,4 +81,9 @@ const radio = document.querySelectorAll('input[name="janken"]');
         document.getElementById("greet").src = "";
         document.getElementById("score").innerHTML = score;
         document.getElementById("cScore").innerHTML = cScore;
+        clr.addEventListener("click", () => {
+            mNum = 0;
+            document.getElementById("mHist").innerHTML = "";
+            
+        });
     });
