@@ -9,15 +9,18 @@
 </head>
 <body class="container-fluid text-white text-center bg-dark p-3">
     <h1>Janken!</h1>
-    <img src="Janken.png" alt="" class="img img-fluid col-3">
+    <img id="greet" src="Janken.png" alt="" class="img img-fluid col-2">
     <br><br><br>
     <div class="row">
         <div class="col-1"></div>
-        <div class="col-4" >
+        <div class="col-lg-3 col-4" >
             <img id="uImage" class="img-fluid" src="" alt="">
         </div>
-        <div class="col-2"></div>
-        <div class="col-4" >
+        <div class="col-lg-4 col-2 text-center">
+            <h3>Score:</h3>
+            <h3 id="score"></h3>
+        </div>
+        <div class="col-lg-3 col-4" >
             <img id="cImage" class="img-fluid" src="" alt="">
         </div>
         <div class="col-1"></div>
@@ -25,8 +28,8 @@
     
     <div class="row">
         <div class="col-12 text-center pt-1 pb-5">
-            <h3>Score:</h3>
-            <h3 id="score"></h3>
+            <!-- <h3>Score:</h3>
+            <h3 id="score"></h3> -->
         </div>
         <div class="col-12 col-lg-1"></div>
         <div class="col-12 col-lg-5">
