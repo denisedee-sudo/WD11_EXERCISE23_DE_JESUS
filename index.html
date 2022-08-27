@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 23: Rock, Paper, Scissors Game</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+</head>
+<body class="container-fluid text-white text-center bg-dark p-3">
+    <h1>Janken!</h1>
+    <img src="Janken.png" alt="" class="img img-fluid col-3">
+    <br><br><br>
+    <div class="row">
+        <div class="col-1"></div>
+        <div class="col-4" >
+            <img id="uImage" class="img-fluid" src="" alt="">
+        </div>
+        <div class="col-2"></div>
+        <div class="col-4" >
+            <img id="cImage" class="img-fluid" src="" alt="">
+        </div>
+        <div class="col-1"></div>
+    </div>
+    
+    <div class="row">
+        <div class="col-12 text-center pt-1 pb-5">
+            <h3>Score:</h3>
+            <h3 id="score"></h3>
+        </div>
+        <div class="col-12 col-lg-1"></div>
+        <div class="col-12 col-lg-5">
+            <h3>Please select rock, paper or scissors</h3>
+            <div class="d-grid">
+                <input type="radio" class="btn-check" name="janken" id="janken1" value="rock">
+                <label for="janken1" class="btn btn-outline-light pt-2 pb-2 m-1">Rock</label>
+                <input type="radio" class="btn-check" name="janken" id="janken2" value="paper">
+                <label for="janken2" class="btn btn-outline-light pt-2 pb-2 m-1">Paper</label>
+                <input type="radio" class="btn-check" name="janken" id="janken3" value="scissors">
+                <label for="janken3" class="btn btn-outline-light pt-2 pb-2 m-1">Scissors</label>
+                <button id="go" class="btn btn-primary">Let's Go!</button>
+            </div>
+        </div>
+        <div class="col-12 col-lg-5">
+            <h3 id="uChoice"></h3>
+            <br>
+            <h3>The computer chose:</h3>
+            <h3 id="computerPlay"></h3>
+            <br><br>
+            <h3> The winner is: </h3>
+            <h3 id="winner"></h3>
+        </div>
+        <div class="col-12 col-lg-1"></div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
